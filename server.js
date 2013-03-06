@@ -14,5 +14,7 @@ app.post('/facts', fact.addWine);
 app.put('/facts/:id', fact.updateWine);
 app.delete('/facts/:id', fact.deleteWine);
 
-app.listen(3000);
-console.log('Listening on port 3000...');
+var port = process.env.PORT || 3000;
+app.listen(port, function() {
+  console.log("Listening on " + port);
+});

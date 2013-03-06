@@ -436,7 +436,7 @@ model.getImpacts(function(err, impacts) {
   if(err) return console.log('Argh, falied!', err);
 
   console.log('Carbon for my international flight: ',
-              impacts);
+              impacts.carbon);
   console.log('Methodology: ', impacts.methodology);
 });
 
