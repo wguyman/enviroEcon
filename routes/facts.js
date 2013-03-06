@@ -421,24 +421,6 @@ dis = yearRef.child("FORESTRY");
 dis.child("Vulnerability Level").set("Severe");
 dis.child("Cost (million USD PPP)").set(23700);
 
-/** BRIGHTER PLANET API KEY **/
-process.env.CM1_KEY = 'e708a57d0d60cd12483d7811e8e34edf';
-
-//Sample Brighter planet data query
-var CM1 = require('CM1');
-var model = CM1.model('flight', {
-  origin_airport: 'JFK',
-  destination_airport: 'Berlin',
-  airline: 'Luftansa'
-});
-
-model.getImpacts(function(err, impacts) {
-  if(err) return console.log('Argh, falied!', err);
-
-  console.log('Carbon for my international flight: ',
-              impacts.carbon);
-  console.log('Methodology: ', impacts.methodology);
-});
 
 exports.findAll = function(req, res) {
 	console.log(req.body);
